@@ -14,7 +14,7 @@
 | Persistent dated episodic session memory | Planned |
 
 ## Technology Stack
-- Front‑end: HTML, CSS, vanilla JavaScript
+- Front‑end: HTML, CSS,  JavaScript,Drawio
 - No external LLM API keys included. All model outputs are hard‑coded mock simulation for HCI interaction demonstration.
 
 ## How to run

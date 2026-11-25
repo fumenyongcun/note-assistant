@@ -24,9 +24,9 @@
 4. Open panel "What I remember about you" to inspect/edit/delete system‑inferred learning preferences.
 
 ## Development Record
-- Commit 52f21ac: Added explicit preference‑management panel. Iteration: initial design silently updated inferred preferences without user visibility. Revised following Week4 context‑engineering lectures: system inferences must be inspectable, editable and forgettable.
-- Added confidence score display to mitigate expectation gulf (Week1 / Week3 lecture content).
-- Implemented suggestion‑chip UI to shift from recall to recognition and reduce extraneous cognitive load.
+At first, the design was just a simple summary and abstract of notes for students. Later, it was believed that everyone would have different preferences or options, so different usage scenarios were added to provide them with more choices and help them learn better.
+Added confidence score display to mitigate expectation gulf
 
 ## AI Assistance Declaration
-Generative AI tools were used to draft initial UI markup and text snippets. All interaction design choices, design rationale arguments and HCI concept mappings were manually reviewed, revised and aligned to Weeks1‑4 module content by the author. No generated code was used without manual checking and modification.
+I used the AI tool Dou Bao. At first, I wanted to find a drawing software to draw flowcharts, so I asked AI about it. Later, because I didn't know how to export it after drawing, I asked AI how to use it.
+I borrowed translation software because I don't know how to use some expressions in English, just translating individual words. Afterwards, I requested AI to help check for spelling errors in this paper and make necessary revisions.

@@ -14,16 +14,18 @@
 | Persistent dated episodic session memory | Planned |
 
 ## Technology Stack
-Front‑end: HTML, CSS,  JavaScript,Drawio
-No external LLM API keys included. All model outputs are hard‑coded mock simulation for HCI interaction demonstration.
-Is it in line with the actual situation? Can users easily use and generate content quickly and clearly.
-Can the code run properly. Does it meet the requirements of the paper.
+-Front‑end: HTML, CSS,  JavaScript,Drawio
+-No external LLM API keys included. All model outputs are hard‑coded mock simulation for HCI interaction demonstration.
 
 ## How to run and check
 1. Clone repository
 2. Open index.html in web browser
 3. Paste note text, select summary style option and press "Process notes"
 4. Open panel "What I remember about you" to inspect/edit/delete system‑inferred learning preferences.
+5. Is it in line with the actual situation.
+6. Can users easily use and generate content quickly and clearly.
+7. Can the code run properly.
+8. Does it meet the requirements of the paper.
 
 ## Development Record
 At first, the design was just a simple summary and abstract of notes for students. Later, it was believed that everyone would have different preferences or options, so different usage scenarios were added to provide them with more choices and help them learn better.

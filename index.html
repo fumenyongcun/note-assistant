@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Note Organising Assistant</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 20px;
+            background-color: #f5f7fa;
+        }
+        .card {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px #00000015;
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 100%;
+            min-height: 160px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        .chip-group {
+            margin:12px 0;
+        }
+        .chip {
+            display:inline-block;
+            padding: 6px 12px;
+            border:1px solid #2563eb;
+            color:#2563eb;
+            border-radius:999px;
+            margin:4px;
+            cursor:pointer;
+        }
+        .chip.selected {
+            background:#2563eb;
+            color:white;
+        }
+        button {
+            padding: 10px 20px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:1rem;
+        }
+        .result-box {
+            margin-top:16px;
+            padding:16px;
+            background:#f0f7ff;
+            border-radius:8px;
+        }
+        .confidence {
+            color:#b45309;
+            font-weight:bold;
+        }
+        .pref-panel {
+            background:#fffbeb;
+        }
+        .toast {
+            display:none;
+            background:#22c55e;
+            color:white;
+            padding:10px;
+            border-radius:8px;
+            margin:10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI Personal Learning Note Assistant</h1>
+    <div class="toast" id="toast">Input received, processing...</div>
+
+    <div class="card">
+        <h3> Paste your lecture notes here </h3>
+        <textarea id="noteInput" placeholder="Paste raw unstructured lecture notes..."></textarea>
+        <div class="chip-group">
+            <div class="chip" onclick="selectChip(this)">Bullet-point summary</div>
+            <div class="chip" onclick="selectChip(this)">Short paragraph</div>
+            <div class="chip" onclick="selectChip(this)">Exam-focused key points</div>
+        </div>
+        <br>
+        <button onclick="processNote()">Process notes</button>
+        <div class="result-box" id="resultBox" style="display:none;">
+            <h4>Generated Summary</h4>
+            <div id="summaryText"></div>
+            <div class="confidence" id="confText"></div>
+        </div>
+    </div>
+
+    <div class="card pref-panel">
+        <h3>What I remember about you (Inspect / Edit / Forget)</h3>
+        <p>Current inferred preference: <span id="prefText">Prefers bullet-point summaries</span></p>
+        <button onclick="editPref()">Edit Preference</button>
+        <button onclick="forgetPref()" style="background:#dc2626;">Forget this preference</button>
+    </div>
+
+    <script>
+        let selectedStyle = "Bullet-point summary";
+        function selectChip(el){
+            document.querySelectorAll('.chip').forEach(c=>c.classList.remove('selected'));
+            el.classList.add('selected');
+            selectedStyle = el.innerText;
+        }
+        function showToast(){
+            const t = document.getElementById('toast');
+            t.style.display="block";
+            setTimeout(()=>t.style.display="none",1800);
+        }
+        function processNote(){
+            showToast();
+            setTimeout(()=>{
+                document.getElementById('resultBox').style.display="block";
+                document.getElementById('summaryText').innerText = `[Simulated LLM output] Summary (${selectedStyle}) of your lecture notes:
+• Key concept 1: mixed initiative interaction
+• Key concept 2: visibility and reversibility
+• Key concept3: reduce extraneous cognitive load
+This is mock output for HCI prototype demonstration only.`;
+                document.getElementById('confText').innerText = "Confidence: Medium";
+            },1200)
+        }
+        function editPref(){
+            const newPref = prompt("Set your preferred summary style:");
+            if(newPref) document.getElementById('prefText').innerText = newPref;
+        }
+        function forgetPref(){
+            document.getElementById('prefText').innerText = "No saved preference";
+            alert("Preference forgotten successfully.");
+        }
+    </script>
+</body>
+</html>

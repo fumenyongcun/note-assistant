@@ -14,10 +14,12 @@
 | Persistent dated episodic session memory | Planned |
 
 ## Technology Stack
-- Front‑end: HTML, CSS,  JavaScript,Drawio
-- No external LLM API keys included. All model outputs are hard‑coded mock simulation for HCI interaction demonstration.
+Front‑end: HTML, CSS,  JavaScript,Drawio
+No external LLM API keys included. All model outputs are hard‑coded mock simulation for HCI interaction demonstration.
+Is it in line with the actual situation? Can users easily use and generate content quickly and clearly.
+Can the code run properly. Does it meet the requirements of the paper.
 
-## How to run
+## How to run and check
 1. Clone repository
 2. Open index.html in web browser
 3. Paste note text, select summary style option and press "Process notes"
